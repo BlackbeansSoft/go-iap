@@ -101,7 +101,7 @@ func (c *Client) Verify(req *IAPRequest) (IAPResponse, error) {
 	result := IAPResponse{}
 	res, body, errs := gorequest.New().
 		Post(c.URL).
-		Send(req).
+		Send(*req).
 		Timeout(c.TimeOut).
 		End()
 
